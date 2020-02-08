@@ -1,0 +1,60 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+header {
+	height: 50vh;
+}
+header h1 {
+	padding-top: 100px;
+	text-align: center;
+	font-size: 45px;
+}
+header button {
+	display: block;
+	margin: 0 auto;
+	width: 120px;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+}
+main {
+	width: 100%;
+}
+form {
+	display: block;
+	margin: 50px auto;
+	width: 50%;
+}
+form label {
+	font-size: 30px;
+}
+form input {
+	margin: 10px;
+}
+.questionNumber,
+.score {
+	padding-top: 30px;
+	font-size: 20px;
+	color: grey;
+	display: inline-block;
+}
+.score {
+	float: right;
+}
+
+.answers {
+	font-size: 22px;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+.popups h1 {
+	padding-top: 40px;
+	text-align: center;
+}
