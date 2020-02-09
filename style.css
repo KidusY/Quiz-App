@@ -58,3 +58,12 @@ form input {
 	padding-top: 40px;
 	text-align: center;
 }
+.results button {
+	display: block;
+	margin: 10px auto;
+	padding: 10px;
+	width: 100px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+}
