@@ -2,14 +2,23 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+body {
+	background: rgb(95, 89, 228);
+	background: linear-gradient(58deg, rgba(95, 89, 228, 1) 0%, rgba(0, 167, 109, 1) 100%, rgba(255, 149, 0, 1) 100%);
+	height: 100vh;
 }
 header {
-	height: 50vh;
+	position: absolute;
+	top: 25%;
+	width: 100%;
 }
 header h1 {
 	padding-top: 100px;
 	text-align: center;
 	font-size: 45px;
+	color: white;
 }
 header button {
 	display: block;
@@ -22,27 +31,81 @@ header button {
 	border-radius: 10px;
 	border: none;
 	outline: none;
+	cursor: pointer;
+}
+header button:hover {
+	transform: scale(1.1);
+	color: white;
+	background: rgb(138, 228, 89);
+	background: linear-gradient(58deg, rgba(138, 228, 89, 1) 0%, rgba(0, 167, 109, 1) 100%, rgba(255, 149, 0, 1) 100%);
 }
 main {
 	width: 100%;
+	height: 100vh;
+	overflow: hidden;
 }
 form {
 	display: block;
 	margin: 50px auto;
-	width: 50%;
+	width: 80%;
 }
-form label {
+form .question {
 	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+	display: block;
+	margin: 0 auto;
+	color: white;
+	padding-top: 50px;
 }
-form input {
-	margin: 10px;
+form input,
+.input label {
+	width: 50px;
+	cursor: pointer;
+	font-weight: bolder;
+}
+form input[type='radio'] {
+	position: relative;
+	padding: 20px;
+	z-index: 1;
+	transform: scale(2.1);
+}
+form .input {
+	width: 100%;
+	margin-top: 10px;
+	background-color: white;
+	padding: 17px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px 2px rgba(224, 224, 224, 0.65);
+}
+form .input:hover {
+	transform: scale(1.1);
+}
+.btn-submit {
+	display: block;
+	margin: 20px auto;
+	padding: 10px;
+	width: 100px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	background: white;
+	font-weight: bolder;
+	cursor: pointer;
+}
+.btn-submit:hover {
+	transform: scale(1.1);
+	color: white;
+	background: rgb(138, 228, 89);
+	background: linear-gradient(58deg, rgba(138, 228, 89, 1) 0%, rgba(0, 167, 109, 1) 100%, rgba(255, 149, 0, 1) 100%);
 }
 .questionNumber,
 .score {
-	padding-top: 30px;
 	font-size: 20px;
-	color: grey;
+	color: rgb(219, 219, 219);
 	display: inline-block;
+	text-align: center;
 }
 .score {
 	float: right;
@@ -52,7 +115,7 @@ form input {
 	font-size: 22px;
 	display: block;
 	margin: 0 auto;
-	width: 50%;
+	width: 80%;
 }
 .popups h1 {
 	padding-top: 40px;
@@ -66,4 +129,53 @@ form input {
 	border-radius: 10px;
 	border: none;
 	outline: none;
+}
+.results,
+.wrongAnswer {
+	position: relative;
+	z-index: 3000;
+	transform: translateY(-120%);
+	background: rgb(182, 31, 201);
+	background: linear-gradient(
+		343deg,
+		rgba(182, 31, 201, 1) 41%,
+		rgba(0, 255, 244, 1) 100%,
+		rgba(0, 167, 109, 1) 100%
+	);
+	display: none;
+	padding: 10px;
+	text-align: center;
+	border-radius: 50px;
+	border: none;
+	box-shadow: 2px 2px 2px 2px #ffffff63;
+	height: 450px;
+	width: 75%;
+	margin: 0 auto;
+	color: white;
+	font-weight: bolder;
+}
+
+.imgContainer {
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+}
+.imgContainer img {
+	width: 80%;
+	max-width: 150px;
+	display: block;
+	margin: 0 auto;
+}
+
+.next-btn {
+	display: block;
+	margin: 20px auto;
+	padding: 10px;
+	width: 100px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	background: white;
+	font-weight: bolder;
+	cursor: pointer;
 }

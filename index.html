@@ -3,94 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <header>
-       <h1> Welcome</h1>
-        <button>Start</button>
+    <header>   
+     
     </header>
-<main>
-   <!--------------------------------------------The question should go here----------------------> 
-    <section class="questions">
-    <form>
-        <label for="Answer">What colour jersey is worn by the winners of each stage of the Tour De France? </label>
-        <div class ="answers">
-        <input type="radio" name="Answer"> Yellow<br>
-        <input type="radio" name="Answer"> Green<br>
-        <input type="radio" name="Answer"> Red <br>
-        <input type="radio" name="Answer"> Pink<br> 
-        </div> 
-        
-        <div class="questionNumber">Question number: 1 of 5 </div>
-        <div class="score"> Score: 1 of 5 </div>
-    </form> 
-    <form>
-        <label for="Answer">Name the only heavyweight boxing champion to finish his career of 49 fights without ever having been defeated? </label>
-        <div class ="answers">
-        <input type="radio" name="Answer"> Kidus Kinfe<br>
-        <input type="radio" name="Answer"> Rocky Marciano<br>
-        <input type="radio" name="Answer"> Mark Davidson <br>
-        <input type="radio" name="Answer"> Sean audian<br> 
-        </div>
-        <div class="questionNumber">Question number: 2 of 5 </div>
-        <div class="score"> Score: 2 of 5 </div>    
-    </form> 
-    <form>
-        <label for="Answer"> Which sport does Constantino Rocca play?</label>
-        <div class ="answers">
-        <input type="radio" name="Answer"> Golf<br>
-        <input type="radio" name="Answer"> Basketball<br>
-        <input type="radio" name="Answer"> Football<br>
-        <input type="radio" name="Answer"> Tennis<br> 
-        </div>
-        <div class="questionNumber">Question number: 3 of 5 </div>
-        <div class="score"> Score: 3 of 5 </div>    
-    </form> 
-    <form>
-        <label for="Answer">Name the country where you would find the Cresta Run?</label>
-        <div class ="answers">
-        <input type="radio" name="Answer"> Ethiopia<br>
-        <input type="radio" name="Answer"> England<br>
-        <input type="radio" name="Answer"> USA<br>
-        <input type="radio" name="Answer"> Switzerland<br> 
-        </div>
-        <div class="questionNumber">Question number: 4 of 5 </div>
-        <div class="score"> Score: 4 of 5 </div>     
-    </form> 
-    <form>
-        <label for="Answer">How many times was the Men's Tennis Singles at Wimbledon won by Bjorn Borg? </label>
-        <div class ="answers">
-        <input type="radio" name="Answer"> Nine<br>
-        <input type="radio" name="Answer"> Two<br>
-        <input type="radio" name="Answer"> Three<br>
-        <input type="radio" name="Answer"> One<br> 
-        </div>
-        <div class="questionNumber">Question number: 5 of 5 </div>
-        <div class="score"> Score: 5 of 5 </div>      
-    </form> 
-    </section>
-  <!--------------------------------------------If the answer is wrong the pop up go here and 
-                                                if the answers are right at the end the pop up should go here ---------------------->  
-    <section class="popups">
-        <div class="wrongAnswer">
-            <h1> Sorry the answer is wrong, the correct answer is...</h1>
-        </div>
-        <div class="results">
-          <h1> Good Job, your score is ....</h1>
-          <button>Restart</button>
+    <main>
+    <!--------------------------------------------The question should go here----------------------> 
+        <section class="questions">  
+           
+        </section>
+    <!--------------------------------------------If the answer is wrong the pop up go here and 
+                                                    if the answers are right at the end the pop up should go here ---------------------->  
+        <section class="popups">
+            
+             <div class="results">
+                  <div class="imgContainer"></div>
+            <h1> </h1>
+            <button class='restart-btn'>Restart</button>
 
-        </div>
-    </section>
-   
+            </div>
+           
+        </section>
+    
 
-</main>
+    </main>
 
 
   
     
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script src="app.js"></script>
 </html>
