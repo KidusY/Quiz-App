@@ -4,10 +4,11 @@
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
 }
+html,
 body {
 	background: rgb(95, 89, 228);
-	background: linear-gradient(58deg, rgba(95, 89, 228, 1) 0%, rgba(0, 167, 109, 1) 100%, rgba(255, 149, 0, 1) 100%);
-	height: 100vh;
+	background: linear-gradient(98deg, rgba(95, 89, 228, 1) 0%, rgba(0, 167, 109, 1) 100%, rgba(255, 149, 0, 1) 100%);
+	height: auto;
 }
 header {
 	position: absolute;
@@ -32,6 +33,7 @@ header button {
 	border: none;
 	outline: none;
 	cursor: pointer;
+	background: white;
 }
 header button:hover {
 	transform: scale(1.1);
@@ -41,12 +43,10 @@ header button:hover {
 }
 main {
 	width: 100%;
-	height: 100vh;
-	overflow: hidden;
 }
 form {
 	display: block;
-	margin: 50px auto;
+	margin: 20px auto;
 	width: 80%;
 }
 form .question {
@@ -57,6 +57,12 @@ form .question {
 	margin: 0 auto;
 	color: white;
 	padding-top: 50px;
+}
+.logoImg {
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+	max-width: 150px;
 }
 form input,
 .input label {
@@ -100,15 +106,17 @@ form .input:hover {
 	background: rgb(138, 228, 89);
 	background: linear-gradient(58deg, rgba(138, 228, 89, 1) 0%, rgba(0, 167, 109, 1) 100%, rgba(255, 149, 0, 1) 100%);
 }
+.formFooter {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+}
 .questionNumber,
 .score {
 	font-size: 20px;
 	color: rgb(219, 219, 219);
-	display: inline-block;
 	text-align: center;
-}
-.score {
-	float: right;
 }
 
 .answers {
@@ -167,7 +175,8 @@ form .input:hover {
 	margin: 0 auto;
 }
 
-.next-btn {
+.next-btn,
+.restart-btn {
 	display: block;
 	margin: 20px auto;
 	padding: 10px;
@@ -178,4 +187,5 @@ form .input:hover {
 	background: white;
 	font-weight: bolder;
 	cursor: pointer;
+	background-color: white;
 }

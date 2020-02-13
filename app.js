@@ -29,6 +29,7 @@ let store = [];
 let counter = 0;
 let score = 0;
 let forms;
+let SFX = new Audio();
 
 function storesQuestionsandAnswers() {
     store = questions.map((elements, index) => {
@@ -43,8 +44,11 @@ function storesQuestionsandAnswers() {
             <div class="input"><input type="radio" name ="answers" id="${elements.answers[3]}" value = '${elements.answers[3]}'><label for="${elements.answers[3]}">${elements.answers[3]}<br> </label> </div>     
        </div>
         <button type ="submit" class="btn-submit">Submit</button><br>
-        <div class="questionNumber">Question: ${index + 1} of 5 </div>
-        <div class="score">Score: 0 of 5  </div> 
+        <div class = "formFooter">
+          <div class="questionNumber">Question: ${index + 1} of 5 </div>
+          <div class="score">Score: 0 of 5  </div> 
+        </div>
+       
         <div class="wrongAnswer">
          <div class="imgContainer"> <img src="image/hiclipart.com (42) down.png" alt="Wrong Answer"/> </div>
                 <h1></h1>
@@ -61,6 +65,11 @@ function storesQuestionsandAnswers() {
     );
 
 
+}
+
+function audio(audio) {
+    SFX.src = audio;
+    SFX.play();
 }
 
 function appendElements() {
@@ -92,13 +101,14 @@ function getInput() {
 }
 
 function checkAnswer(currentInput) {
-
+    SFX.muted = false;
     console.log(questions[counter - 1].correctAnswer);
 
     if (currentInput == questions[counter - 1].correctAnswer) {
         score++;
         return true;
     } else if (currentInput != questions[counter - 1].correctAnswer) {
+        audio('/SFX/14192_1459953012.mp3');
         renderIncorrect();
         return false;
     }
@@ -132,10 +142,16 @@ function renderHomeScreen() {
 }
 
 function renderResults() {
+    SFX.muted = false;
     if (score < 3) {
-        $('.results h1').text(` Your Score is ${score}/5...Come on you can do better`)
+        $('.results img').remove();
+        $('.results .imgContainer').append(` <img src="image/hiclipart.com (44).png" alt="Wrong Answer"/>`)
+        $('.results h1').text(` Your Score is ${score} / 5...Come on you can do better`);
+        $('.results h2').text(`Read an book or something!!!... `);
+        audio('/SFX/18577_1464796417.mp3');
     } else if (score >= 3) {
         $('.results img').remove();
+        audio('/SFX/11143_1393964019.mp3');
         $('.results h1').text(` Well done!!!! Your Score is ${score}/5`);
         $('.results .imgContainer').append(` <img src="image/hiclipart.com (42).png" alt="Wrong Answer"/>`)
     }
@@ -151,6 +167,7 @@ function renderIncorrect() {
 function restart() {
     counter = 0;
     score = 0;
+    SFX.muted = true;
     $('body').append(`<header></header>`);
     $('form').remove();
     storesQuestionsandAnswers();
@@ -176,6 +193,8 @@ function renderHtml() {
 
 
 
+
+
 function main() {
     renderHomeScreen();
     appendElements();
@@ -192,6 +211,9 @@ function main() {
             console.log("hey");
 
             if (checkAnswer(input)) {
+                SFX.muted = false;
+                audio('/SFX/17937_1464203358.mp3');
+
                 $(parent).slideUp(() => parent.hide());
 
                 storesQuestionsandAnswers();
@@ -207,9 +229,11 @@ function main() {
 
     });
 
+
     $('.restart-btn').click(() => {
         restart();
         $('.results').hide();
+
     })
 
     $('main').on('click', '.next-btn', function (e) {
@@ -217,6 +241,7 @@ function main() {
         let parent = $(this).closest('form');
         $('.wrongAnswer').slideUp(() => $('.wrongAnswer').hide());
         $(parent).slideUp(500, () => parent.hide());
+        SFX.muted = true;
         storesQuestionsandAnswers();
         renderHtml();
     })
