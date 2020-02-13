@@ -108,7 +108,7 @@ function checkAnswer(currentInput) {
         score++;
         return true;
     } else if (currentInput != questions[counter - 1].correctAnswer) {
-        audio('/SFX/14192_1459953012.mp3');
+        audio('/SFX/14192_1459953012.ogg');
         renderIncorrect();
         return false;
     }
@@ -148,10 +148,10 @@ function renderResults() {
         $('.results .imgContainer').append(` <img src="image/hiclipart.com (44).png" alt="Wrong Answer"/>`)
         $('.results h1').text(` Your Score is ${score} / 5...Come on you can do better`);
         $('.results h2').text(`Read an book or something!!!... `);
-        audio('/SFX/18577_1464796417.mp3');
+        audio('/SFX/18577_1464796417.ogg');
     } else if (score >= 3) {
         $('.results img').remove();
-        audio('/SFX/11143_1393964019.mp3');
+        audio('/SFX/11143_1393964019.ogg');
         $('.results h1').text(` Well done!!!! Your Score is ${score}/5`);
         $('.results .imgContainer').append(` <img src="image/hiclipart.com (42).png" alt="Wrong Answer"/>`)
     }
@@ -212,7 +212,7 @@ function main() {
 
             if (checkAnswer(input)) {
                 SFX.muted = false;
-                audio('/SFX/17937_1464203358.mp3');
+                audio('/SFX/17937_1464203358.ogg');
 
                 $(parent).slideUp(() => parent.hide());
 
