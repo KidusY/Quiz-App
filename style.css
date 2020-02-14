@@ -176,7 +176,8 @@ form .input:hover {
 }
 
 .next-btn,
-.restart-btn {
+.restart-btn,
+.TryAgain-btn {
 	display: block;
 	margin: 20px auto;
 	padding: 10px;
@@ -188,4 +189,7 @@ form .input:hover {
 	font-weight: bolder;
 	cursor: pointer;
 	background-color: white;
+}
+.TryAgain-btn {
+	display: none;
 }
