@@ -136,6 +136,7 @@ function checkAnswer(currentInput) {
 }
 //This functions simply renders the home screen
 function renderHomeScreen() {
+    $('.logoImg').hide();
     const homeScreen = `<h1> Welcome</h1>
         <button class="Start">Start</button>`
 
@@ -148,7 +149,12 @@ function renderHomeScreen() {
     $('header').on('click', '.Start', () => {
         $('header').slideUp(() => {
             $('header').hide();
-        });
+        })
+
+
+        $('.logoImg').slideDown(1000, () => $('.logoImg').show());
+
+
 
         //sets a time out so that the questions appear after 500 milliseconds 
         setTimeout(() => {
@@ -175,7 +181,9 @@ function renderResults() {
 
     } else if (score >= 3) {
         $('.results img').remove();
-        $('.results h1').text(` Well done!!!! Your Score is ${score}/5`);
+        $('.results h1').text(`Score: ${score} / 5`);
+        $('.results h2').text(`Well done!!!!`);
+        $('.results h3').text(`You are actually good at something after all`);
         $('.results .imgContainer').append(` <img src="image/hiclipart.com (42).png" alt="Wrong Answer"/>`)
     }
 
