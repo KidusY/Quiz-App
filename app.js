@@ -189,7 +189,7 @@ function renderResults() {
 
     $('.results').show();
 }
-
+//renders the correct if the user is wrong 
 function renderIncorrect() {
     $('.wrongAnswer h1').text(`Sorry the answer is wrong, the correct answer is... ${questions[counter-1].correctAnswer}`);
     $('.TryAgain-btn').hide();
@@ -197,6 +197,7 @@ function renderIncorrect() {
     $('.wrongAnswer').show();
 }
 
+//restarts the game after clicking restart 
 function restart() {
     counter = 0;
     score = 0;
@@ -209,6 +210,7 @@ function restart() {
 
 }
 
+//if the user doesn't input the answers it will render try again dialog 
 function tryAgain() {
     $('.wrongAnswer h1').text(`Please guess, this is a game!!!`);
     $('.next-btn').hide();
@@ -222,7 +224,7 @@ function tryAgain() {
 
 
 
-
+//shows or renders the questions that was appended and keeps track of the questions by updating counter 
 function renderHtml() {
     forms = $('form');
     if (counter < 5) {
@@ -238,19 +240,24 @@ function renderHtml() {
 
 
 
-
+//main function
 function main() {
+    //render the home sreen first
     renderHomeScreen();
-    appendElements();
 
+    //then appends the questions
+    appendElements();
+    //---------------------event handler section----------------------------------
+
+    //handles the submit button
     $('main').on('click', '.btn-submit', function (e) {
         e.preventDefault();
         let parent = $(this).closest('form');
 
         let input = getInput()
 
-        //feedback
-
+        // gives feedback
+        //validations
         if (counter < 5) {
 
             if (!input) {
@@ -273,6 +280,7 @@ function main() {
 
     });
 
+    //calls restart function
 
     $('.restart-btn').click(() => {
         restart();
@@ -280,6 +288,7 @@ function main() {
 
     })
 
+    //generates another question
     $('main').on('click', '.next-btn', function (e) {
         e.preventDefault();
         let parent = $(this).closest('form');
@@ -290,6 +299,7 @@ function main() {
         renderHtml();
     })
 
+    //closes the try again dialog box
     $('main').on('click', '.TryAgain-btn', function (e) {
         e.preventDefault();
         $('.wrongAnswer').hide()
